@@ -1,9 +1,9 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: productpage
+  name: productpage-<userNN>
 spec:
-  host: productpage
+  host: productpage-<userNN>
   subsets:
   - name: v1
     labels:
@@ -12,9 +12,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: reviews
+  name: reviews-<userNN>
 spec:
-  host: reviews
+  host: reviews-<userNN>
   subsets:
   - name: v1
     labels:
@@ -29,9 +29,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: ratings
+  name: ratings-<userNN>
 spec:
-  host: ratings
+  host: ratings-<userNN>
   subsets:
   - name: v1
     labels:
@@ -49,9 +49,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: details
+  name: details-<userNN>
 spec:
-  host: details
+  host: details-<userNN>
   subsets:
   - name: v1
     labels:

@@ -27,159 +27,159 @@
 ##################################################################################################
 
 ##################################################################################################
-# details-<userNN> service
+# details-userNN service
 ##################################################################################################
 apiVersion: v1
 kind: Service
 metadata:
-  name: details-<userNN>
+  name: details-userNN
   labels:
-    app: details-<userNN>
-    service: details-<userNN>
+    app: details-userNN
+    service: details-userNN
 spec:
   ports:
   - port: 9080
     name: http
   selector:
-    app: details-<userNN>
+    app: details-userNN
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: bookinfo-details-<userNN>
+  name: bookinfo-details-userNN
   labels:
-    account: details-<userNN>
+    account: details-userNN
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: details-<userNN>-v1
+  name: details-userNN-v1
   labels:
-    app: details-<userNN>
+    app: details-userNN
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: details-<userNN>
+      app: details-userNN
       version: v1
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: details-<userNN>
+        app: details-userNN
         version: v1
     spec:
-      serviceAccountName: bookinfo-details-<userNN>
+      serviceAccountName: bookinfo-details-userNN
       containers:
-      - name: details-<userNN>
+      - name: details-userNN
         image: quay.io/mmondics/examples-bookinfo-details-v1:1.16.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
 ---
 ##################################################################################################
-# ratings-<userNN> service
+# ratings-userNN service
 ##################################################################################################
 apiVersion: v1
 kind: Service
 metadata:
-  name: ratings-<userNN>
+  name: ratings-userNN
   labels:
-    app: ratings-<userNN>
-    service: ratings-<userNN>
+    app: ratings-userNN
+    service: ratings-userNN
 spec:
   ports:
   - port: 9080
     name: http
   selector:
-    app: ratings-<userNN>
+    app: ratings-userNN
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: bookinfo-ratings-<userNN>
+  name: bookinfo-ratings-userNN
   labels:
-    account: ratings-<userNN>
+    account: ratings-userNN
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ratings-<userNN>-v1
+  name: ratings-userNN-v1
   labels:
-    app: ratings-<userNN>
+    app: ratings-userNN
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ratings-<userNN>
+      app: ratings-userNN
       version: v1
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: ratings-<userNN>
+        app: ratings-userNN
         version: v1
     spec:
-      serviceAccountName: bookinfo-ratings-<userNN>
+      serviceAccountName: bookinfo-ratings-userNN
       containers:
-      - name: ratings-<userNN>
+      - name: ratings-userNN
         image: quay.io/mmondics/examples-bookinfo-ratings-v1:1.16.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
 ---
 ##################################################################################################
-# reviews-<userNN> service
+# reviews-userNN service
 ##################################################################################################
 apiVersion: v1
 kind: Service
 metadata:
-  name: reviews-<userNN>
+  name: reviews-userNN
   labels:
-    app: reviews-<userNN>
-    service: reviews-<userNN>
+    app: reviews-userNN
+    service: reviews-userNN
 spec:
   ports:
   - port: 9080
     name: http
   selector:
-    app: reviews-<userNN>
+    app: reviews-userNN
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: bookinfo-reviews-<userNN>
+  name: bookinfo-reviews-userNN
   labels:
-    account: reviews-<userNN>
+    account: reviews-userNN
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-<userNN>-v1
+  name: reviews-userNN-v1
   labels:
-    app: reviews-<userNN>
+    app: reviews-userNN
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: reviews-<userNN>
+      app: reviews-userNN
       version: v1
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: reviews-<userNN>
+        app: reviews-userNN
         version: v1
     spec:
-      serviceAccountName: bookinfo-reviews-<userNN>
+      serviceAccountName: bookinfo-reviews-userNN
       containers:
-      - name: reviews-<userNN>
+      - name: reviews-userNN
         image: quay.io/mmondics/examples-bookinfo-reviews-v1:1.16.2
         imagePullPolicy: IfNotPresent
         env:
@@ -201,27 +201,27 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-<userNN>-v2
+  name: reviews-userNN-v2
   labels:
-    app: reviews-<userNN>
+    app: reviews-userNN
     version: v2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: reviews-<userNN>
+      app: reviews-userNN
       version: v2
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: reviews-<userNN>
+        app: reviews-userNN
         version: v2
     spec:
-      serviceAccountName: bookinfo-reviews-<userNN>
+      serviceAccountName: bookinfo-reviews-userNN
       containers:
-      - name: reviews-<userNN>
+      - name: reviews-userNN
         image: quay.io/mmondics/examples-bookinfo-reviews-v2:1.16.2
         imagePullPolicy: IfNotPresent
         env:
@@ -243,27 +243,27 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-<userNN>-v3
+  name: reviews-userNN-v3
   labels:
-    app: reviews-<userNN>
+    app: reviews-userNN
     version: v3
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: reviews-<userNN>
+      app: reviews-userNN
       version: v3
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: reviews-<userNN>
+        app: reviews-userNN
         version: v3
     spec:
-      serviceAccountName: bookinfo-reviews-<userNN>
+      serviceAccountName: bookinfo-reviews-userNN
       containers:
-      - name: reviews-<userNN>
+      - name: reviews-userNN
         image: quay.io/mmondics/examples-bookinfo-reviews-v3:1.16.2
         imagePullPolicy: IfNotPresent
         env:
@@ -283,53 +283,53 @@ spec:
         emptyDir: {}
 ---
 ##################################################################################################
-# productpage-<userNN> services
+# productpage-userNN services
 ##################################################################################################
 apiVersion: v1
 kind: Service
 metadata:
-  name: productpage-<userNN>
+  name: productpage-userNN
   labels:
-    app: productpage-<userNN>
-    service: productpage-<userNN>
+    app: productpage-userNN
+    service: productpage-userNN
 spec:
   ports:
   - port: 9080
     name: http
   selector:
-    app: productpage-<userNN>
+    app: productpage-userNN
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: bookinfo-productpage-<userNN>
+  name: bookinfo-productpage-userNN
   labels:
-    account: productpage-<userNN>
+    account: productpage-userNN
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productpage-<userNN>-v1
+  name: productpage-userNN-v1
   labels:
-    app: productpage-<userNN>
+    app: productpage-userNN
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: productpage-<userNN>
+      app: productpage-userNN
       version: v1
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
-        app: productpage-<userNN>
+        app: productpage-userNN
         version: v1
     spec:
-      serviceAccountName: bookinfo-productpage-<userNN>
+      serviceAccountName: bookinfo-productpage-userNN
       containers:
-      - name: productpage-<userNN>
+      - name: productpage-userNN
         image: quay.io/mmondics/examples-bookinfo-productpage-v1:1.16.2
         imagePullPolicy: IfNotPresent
         ports:

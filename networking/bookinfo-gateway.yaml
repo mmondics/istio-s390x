@@ -4,7 +4,8 @@ metadata:
   name: bookinfo-gateway-userNN
 spec:
   selector:
-    istio: ingressgateway # use istio default controller
+    istio: ingressgateway-user08 # use custom controller
+#     istio: ingressgateway # use istio default controller
   servers:
   - port:
       number: 80
@@ -21,11 +22,11 @@ spec:
   hosts:
   - "*"
   gateways:
-  - bookinfo-gateway
+  - bookinfo-gateway-userNN
   http:
   - match:
     - uri:
-        exact: /productpage
+        exact: /productpage-userNN
     - uri:
         prefix: /static
     - uri:
@@ -36,6 +37,6 @@ spec:
         prefix: /api/v1/products
     route:
     - destination:
-        host: productpage
+        host: productpage-userNN
         port:
           number: 9080

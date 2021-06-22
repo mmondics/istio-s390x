@@ -1,18 +1,17 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: bookinfo-gateway-userNN
+  name: bookinfo-gateway
 spec:
   selector:
     istio: ingressgateway-user08 # use custom controller
-#     istio: ingressgateway # use istio default controller
   servers:
   - port:
       number: 80
       name: http
       protocol: HTTP
     hosts:
-    - "*"
+    - "userNN-project.istio.apps.atsocpd2.dmz"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -20,13 +19,13 @@ metadata:
   name: bookinfo
 spec:
   hosts:
-  - "*"
+  - "userNN-project.istio.apps.atsocpd2.dmz"
   gateways:
-  - bookinfo-gateway-userNN
+  - bookinfo-gateway
   http:
   - match:
     - uri:
-        exact: /productpage-userNN
+        exact: /productpage
     - uri:
         prefix: /static
     - uri:
@@ -37,6 +36,6 @@ spec:
         prefix: /api/v1/products
     route:
     - destination:
-        host: productpage-userNN
+        host: productpage
         port:
           number: 9080

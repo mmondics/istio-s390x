@@ -18,7 +18,7 @@ SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # only ask if in interactive mode
 if [[ -t 0 && -z ${NAMESPACE} ]];then
-  echo -n "namespace ? [default] "
+  echo -n "namespace ? [userNN-project] "
   read -r NAMESPACE
 fi
 

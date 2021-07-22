@@ -330,7 +330,7 @@ spec:
       serviceAccountName: bookinfo-productpage
       containers:
       - name: productpage
-        image: quay.io/mmondics/examples-bookinfo-productpage-v1:1.16.2
+        image: quay.io/mmondics/examples-bookinfo-productpage-notimeout:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080

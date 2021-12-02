@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "userNN-project.istio.apps.atsocpd2.dmz"
+    - "userNN-project.istio.apps.atsocppa.dmz"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: bookinfo
 spec:
   hosts:
-  - "userNN-project.istio.apps.atsocpd2.dmz"
+  - "userNN-project.istio.apps.atsocppa.dmz"
   gateways:
   - bookinfo-gateway
   http:
